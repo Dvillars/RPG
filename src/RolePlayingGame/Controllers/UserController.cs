@@ -65,7 +65,20 @@ namespace RolePlayingGame.Controllers
             {
                 return View();
             }
-        } 
+        }
+
+        public IActionResult Profile(string id)
+        {
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
+            return View(thisUser);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LogOff()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }
