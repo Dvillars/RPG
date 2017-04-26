@@ -39,6 +39,7 @@ namespace RolePlayingGame
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseIdentity();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

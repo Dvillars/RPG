@@ -10,9 +10,24 @@ namespace RolePlayingGame.Models
 {
     public class RPGContext : IdentityDbContext<User>
     {
+        public RPGContext()
+        {
+        }
+
         public RPGContext(DbContextOptions options) : base(options)
         {
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RolePlayingGame;integrated security=True");
+        }
+
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
     }
 }
