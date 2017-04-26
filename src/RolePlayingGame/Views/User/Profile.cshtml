@@ -6,3 +6,21 @@
 @model RolePlayingGame.Models.User
 
 <h3>@Model.UserName</h3>
+
+@if (!(Model.Avatar == null)) {
+    <img src="@Html.DisplayFor(model => Model.Avatar)" />
+}
+else
+{
+    <img src="https://www.iconexperience.com/_img/g_collection_png/standard/512x512/person.png" />
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+
+    @Html.LabelFor(model => model.Avatar)
+    @Html.EditorFor(model => model.Avatar)
+
+    <input type="submit" value="Save"/>
+}

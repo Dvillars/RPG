@@ -74,11 +74,25 @@ namespace RolePlayingGame.Controllers
         }
 
         [HttpPost]
+        public IActionResult Profile(User user)
+        {
+            var id = user.Id;
+            var thisUser = _db.Users.FirstOrDefault(currentUser => currentUser.Id == id);
+            thisUser.Avatar = user.Avatar;
+            _db.SaveChanges();
+            //_db.Entry(user).State = EntityState.Modified;
+            //_db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+
 
     }
 }
