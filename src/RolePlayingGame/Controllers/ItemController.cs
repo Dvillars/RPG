@@ -10,6 +10,13 @@ namespace RolePlayingGame.Controllers
 {
     public class ItemController : Controller
     {
+        private readonly RPGContext _db;
+
+        public ItemController(RPGContext db)
+        {
+            _db = db;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -23,7 +30,9 @@ namespace RolePlayingGame.Controllers
         [HttpPost]
         public IActionResult Create(Item item)
         {
-            var newItem = new Item { Name = item.Name, Description = item.Description, Effect = item.Effect, Strength = item.Strength};
+            //var newItem = new Item { Name = item.Name, Description = item.Description, Effect = item.Effect, Strength = item.Strength};
+            _db.Items.Add(item);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
     }

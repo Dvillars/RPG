@@ -139,13 +139,9 @@ namespace RolePlayingGame.Migrations
 
                     b.Property<int>("Strength");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Item");
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("RolePlayingGame.Models.User", b =>
@@ -199,6 +195,23 @@ namespace RolePlayingGame.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("RolePlayingGame.Models.UserItem", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<int>("ItemId");
+
+                    b.Property<string>("UserId1");
+
+                    b.HasKey("UserId", "ItemId");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("UserItems");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
@@ -236,11 +249,16 @@ namespace RolePlayingGame.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("RolePlayingGame.Models.Item", b =>
+            modelBuilder.Entity("RolePlayingGame.Models.UserItem", b =>
                 {
+                    b.HasOne("RolePlayingGame.Models.Item", "Item")
+                        .WithMany("UserItems")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("RolePlayingGame.Models.User", "User")
-                        .WithMany("Inventory")
-                        .HasForeignKey("UserId");
+                        .WithMany("UserItems")
+                        .HasForeignKey("UserId1");
                 });
         }
     }

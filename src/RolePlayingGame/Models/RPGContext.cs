@@ -14,6 +14,9 @@ namespace RolePlayingGame.Models
         {
         }
 
+        public DbSet<Item> Items { get; set; }
+        public DbSet<UserItem> UserItems { get; set; }
+
         public RPGContext(DbContextOptions options) : base(options)
         {
 
@@ -28,6 +31,9 @@ namespace RolePlayingGame.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<UserItem>()
+                .HasKey(t => new { t.UserId, t.ItemId });
         }
     }
 }

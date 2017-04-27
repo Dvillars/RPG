@@ -38,6 +38,22 @@ namespace RolePlayingGame.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Items",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Description = table.Column<string>(type: "varchar(MAX)", nullable: false),
+                    Effect = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
+                    Strength = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Items", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetUsers",
                 columns: table => new
                 {
@@ -150,23 +166,25 @@ namespace RolePlayingGame.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Item",
+                name: "UserItems",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Description = table.Column<string>(type: "varchar(MAX)", nullable: false),
-                    Effect = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: false),
-                    Strength = table.Column<int>(nullable: false),
-                    UserId = table.Column<string>(nullable: true)
+                    UserId = table.Column<string>(nullable: false),
+                    ItemId = table.Column<int>(nullable: false),
+                    UserId1 = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Item", x => x.Id);
+                    table.PrimaryKey("PK_UserItems", x => new { x.UserId, x.ItemId });
                     table.ForeignKey(
-                        name: "FK_Item_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_UserItems_Items_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Items",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserItems_AspNetUsers_UserId1",
+                        column: x => x.UserId1,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -203,11 +221,6 @@ namespace RolePlayingGame.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Item_UserId",
-                table: "Item",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
                 column: "NormalizedEmail");
@@ -217,6 +230,16 @@ namespace RolePlayingGame.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserItems_ItemId",
+                table: "UserItems",
+                column: "ItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserItems_UserId1",
+                table: "UserItems",
+                column: "UserId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -237,10 +260,13 @@ namespace RolePlayingGame.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Item");
+                name: "UserItems");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Items");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

@@ -208,13 +208,14 @@ C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\HomeCo
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\ItemController.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\LocationController.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\UserController.cs
-C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170427183905_Initial.cs
-C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170427183905_Initial.Designer.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170427202255_Initial.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170427202255_Initial.Designer.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\RPGContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Enemy.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Item.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Locations.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\RPGContext.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\User.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\UserItem.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\ViewModels\LoginViewModel.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\ViewModels\RegisterViewModel.cs

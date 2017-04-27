@@ -23,6 +23,6 @@ namespace RolePlayingGame.Models
 
         public int Strength { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual ICollection<UserItem> UserItems { get; set; }
     }
 }
