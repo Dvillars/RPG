@@ -41,7 +41,7 @@ namespace RolePlayingGame.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            var user = new User { UserName = model.UserName };
+            var user = new User { UserName = model.UserName, Email = model.Email };
             IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
@@ -78,11 +78,17 @@ namespace RolePlayingGame.Controllers
             return View(thisUser);
         }
 
+        public IActionResult Edit(string id)
+        {
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
+            return View(thisUser);
+        }
+
         [HttpPost]
-        public IActionResult Profile(User user)
+        public IActionResult Edit(User user)
         {
             var id = user.Id;
-            var thisUser = _db.Users.FirstOrDefault(currentUser => currentUser.Id == id);
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
             thisUser.Avatar = user.Avatar;
             _db.SaveChanges();
             //_db.Entry(user).State = EntityState.Modified;
@@ -97,7 +103,20 @@ namespace RolePlayingGame.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult Delete(string id)
+        {
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
+            return View(thisUser);
+        }
 
-
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(string id)
+        {
+            var thisUser = _db.Users.FirstOrDefault(User => User.Id == id);
+            _signInManager.SignOutAsync();
+            _db.Users.Remove(thisUser);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

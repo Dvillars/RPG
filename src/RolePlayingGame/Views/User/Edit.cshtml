@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model RolePlayingGame.Models.User
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+
+    @Html.LabelFor(model => model.UserName)
+    @Html.EditorFor(model => model.UserName)
+
+    @Html.LabelFor(model => model.Email)
+    @Html.EditorFor(model => model.Email)
+
+    @Html.LabelFor(model => model.Avatar)
+    @Html.EditorFor(model => model.Avatar)
+
+    <input type="submit" value="Save" />
+}
+
+@Html.ActionLink("profile", "Profile", new { id = Model.Id })

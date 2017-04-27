@@ -217,6 +217,8 @@ C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\2017042
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426211231_UserRegister2.Designer.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426225047_UserImage.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426225047_UserImage.Designer.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170427171201_AddUserEmail.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170427171201_AddUserEmail.Designer.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\RPGContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Enemy.cs
 C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Inventory.cs

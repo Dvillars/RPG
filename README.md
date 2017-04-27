@@ -14,12 +14,11 @@
 
 ### **2.  Specs**  
 
-  * A user can create an account.
-  * A user can edit their account
-  * A user can delete their account.
-  * A user can upload an avatar.
-  * A user can change an avatar.
-  * A user can delete an avatar.
+  * -A user can create an account.
+  * -A user can edit their account
+  * -A user can delete their account.
+  * -A user can upload an avatar.
+  * -A user can change an avatar.
   * A user can add items to their inventory.
   * A user can edit their inventory.
   * A user can delete items in their inventory.
