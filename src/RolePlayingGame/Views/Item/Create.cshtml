@@ -4,3 +4,19 @@
 }
 @model RolePlayingGame.Models.Item
 
+@using (Html.BeginForm("Create", "Item", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+
+    @Html.LabelFor(m => m.Description)
+    @Html.TextBoxFor(m => m.Description)
+
+    @Html.LabelFor(m => m.Effect)
+    @Html.TextBoxFor(m => m.Effect)
+
+    @Html.LabelFor(m => m.Strength)
+    @Html.TextBoxFor(m => m.Strength)
+
+    <input type="submit" value="Create" />
+}
