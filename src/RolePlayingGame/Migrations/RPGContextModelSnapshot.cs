@@ -125,7 +125,8 @@ namespace RolePlayingGame.Migrations
 
             modelBuilder.Entity("RolePlayingGame.Models.Item", b =>
                 {
-                    b.Property<string>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description")
                         .IsRequired()

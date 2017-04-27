@@ -43,6 +43,7 @@ namespace RolePlayingGame.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
+                    Avatar = table.Column<string>(nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
@@ -148,6 +149,29 @@ namespace RolePlayingGame.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Item",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Description = table.Column<string>(type: "varchar(MAX)", nullable: false),
+                    Effect = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
+                    Strength = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Item", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Item_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
@@ -179,6 +203,11 @@ namespace RolePlayingGame.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Item_UserId",
+                table: "Item",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
                 column: "NormalizedEmail");
@@ -206,6 +235,9 @@ namespace RolePlayingGame.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Item");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

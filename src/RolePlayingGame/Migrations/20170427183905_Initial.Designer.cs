@@ -8,8 +8,8 @@ using RolePlayingGame.Models;
 namespace RolePlayingGame.Migrations
 {
     [DbContext(typeof(RPGContext))]
-    [Migration("20170426205229_UserRegister")]
-    partial class UserRegister
+    [Migration("20170427183905_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -124,11 +124,38 @@ namespace RolePlayingGame.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("RolePlayingGame.Models.Item", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("varchar(MAX)");
+
+                    b.Property<string>("Effect");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("Strength");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Item");
+                });
+
             modelBuilder.Entity("RolePlayingGame.Models.User", b =>
                 {
                     b.Property<string>("Id");
 
                     b.Property<int>("AccessFailedCount");
+
+                    b.Property<string>("Avatar");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -208,6 +235,13 @@ namespace RolePlayingGame.Migrations
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RolePlayingGame.Models.Item", b =>
+                {
+                    b.HasOne("RolePlayingGame.Models.User", "User")
+                        .WithMany("Inventory")
+                        .HasForeignKey("UserId");
                 });
         }
     }
