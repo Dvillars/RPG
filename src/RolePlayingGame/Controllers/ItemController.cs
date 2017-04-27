@@ -19,7 +19,7 @@ namespace RolePlayingGame.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_db.Items.ToList());
         }
 
         public IActionResult Create()
@@ -30,10 +30,17 @@ namespace RolePlayingGame.Controllers
         [HttpPost]
         public IActionResult Create(Item item)
         {
-            //var newItem = new Item { Name = item.Name, Description = item.Description, Effect = item.Effect, Strength = item.Strength};
             _db.Items.Add(item);
             _db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            //            ViewBag.User = _db.Users.FirstOrDefault(users => users.UserName == User.Identity.Name);
+
+            var item = _db.Items.FirstOrDefault(items => items.Id == id);
+            return View(item);
         }
     }
 }

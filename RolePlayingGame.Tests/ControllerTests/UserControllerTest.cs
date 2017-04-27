@@ -8,6 +8,7 @@ using RolePlayingGame.Models;
 using RolePlayingGame.ViewModels;
 using Xunit;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace RolePlayingGame.Tests.ControllerTests
 {
@@ -23,7 +24,7 @@ namespace RolePlayingGame.Tests.ControllerTests
             //Arrange
             User newUser = new User();
             UserController controller = new UserController(_userManager, _signInManager, _db);
-
+            
             //Act
             var result = controller.Index();
 
@@ -45,19 +46,22 @@ namespace RolePlayingGame.Tests.ControllerTests
             Assert.IsType<ViewResult>(result);
         }
 
-        [Fact]
-        public void Get_Model_Register_Test()
-        {
-            //Arrange
-            UserController controller = new UserController(_userManager, _signInManager, _db);
-            IActionResult actionResult = controller.Register();
-            ViewResult registerView = controller.Register() as ViewResult;
+        //[Fact]
+        //public void Get_Model_Register_Test()
+        //{
+        //    var contextOptions = new DbContextOptionsBuilder()
+        //        .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=_RolePlayingGame;integrated security=True")
+        //        .Options;
+        //    //Arrange
+        //    UserController controller = new UserController(_userManager, _signInManager, _db);
+        //    IActionResult actionResult = controller.Register();
+        //    ViewResult registerView = controller.Register() as ViewResult;
 
-            //Act
-            var result = registerView.ViewData.Model;
+        //    //Act
+        //    var result = registerView.ViewData.Model;
 
-            //Assert
-            Assert.IsType<RegisterViewModel>(result);
-        }
+        //    //Assert
+        //    Assert.IsType<RegisterViewModel>(result);
+        //}
     }
 }
