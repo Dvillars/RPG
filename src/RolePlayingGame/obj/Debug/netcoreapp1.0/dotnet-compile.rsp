@@ -1,5 +1,5 @@
---temp-output:C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\obj\Debug\netcoreapp1.0\
---out:C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\bin\Debug\netcoreapp1.0\RolePlayingGame.dll
+--temp-output:C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\obj\Debug\netcoreapp1.0\
+--out:C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\bin\Debug\netcoreapp1.0\RolePlayingGame.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -200,29 +200,29 @@
 --reference:C:\Users\epicodus\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\obj\Debug\netcoreapp1.0\RolePlayingGamedotnet-compile.deps.json",RolePlayingGame.deps.json
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Program.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Startup.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Controllers\EnemyController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Controllers\HomeController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Controllers\InventoryController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Controllers\ItemController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Controllers\LocationController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Controllers\UserController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426181136_Initial.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426181136_Initial.Designer.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426205229_UserRegister.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426205229_UserRegister.Designer.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426211231_UserRegister2.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426211231_UserRegister2.Designer.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426225047_UserImage.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\20170426225047_UserImage.Designer.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Migrations\RPGContextModelSnapshot.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Models\Enemy.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Models\Inventory.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Models\Item.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Models\Locations.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Models\RPGContext.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\Models\User.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\ViewModels\LoginViewModel.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\RolePlayingGame\src\RolePlayingGame\ViewModels\RegisterViewModel.cs
+--resource:"C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\obj\Debug\netcoreapp1.0\RolePlayingGamedotnet-compile.deps.json",RolePlayingGame.deps.json
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Program.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Startup.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\EnemyController.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\HomeController.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\InventoryController.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\ItemController.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\LocationController.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Controllers\UserController.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426181136_Initial.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426181136_Initial.Designer.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426205229_UserRegister.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426205229_UserRegister.Designer.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426211231_UserRegister2.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426211231_UserRegister2.Designer.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426225047_UserImage.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\20170426225047_UserImage.Designer.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Migrations\RPGContextModelSnapshot.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Enemy.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Inventory.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Item.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\Locations.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\RPGContext.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\Models\User.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\ViewModels\LoginViewModel.cs
+C:\Users\epicodus\Desktop\roleplayinggame\src\RolePlayingGame\ViewModels\RegisterViewModel.cs

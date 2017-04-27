@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using RolePlayingGame.Models;
 using RolePlayingGame.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Principal;
 
 namespace RolePlayingGame.Controllers
 {
@@ -25,6 +26,10 @@ namespace RolePlayingGame.Controllers
 
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.User = _db.Users.FirstOrDefault(users => users.UserName == User.Identity.Name);
+            }
             return View();
         }
 
